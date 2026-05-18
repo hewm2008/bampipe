@@ -1,0 +1,15 @@
+includedir=/home/liaojing/tttt/samtools-1.23.1/include
+libdir=/home/liaojing/tttt/samtools-1.23.1/lib
+
+# Flags and libraries needed when linking against a static libhts.a
+# (used by manual and semi-manual pkg-config(1)-style enquiries).
+static_ldflags=
+static_libs=-lpthread -lz -lm -lbz2 -llzma -ldeflate -lcurl -lcrypto
+
+Name: htslib
+Description: C library for high-throughput sequencing data formats
+Version: 1.23.1
+Cflags: -I${includedir}
+Libs: -L${libdir} -lhts
+Libs.private: -L${libdir}  -ldeflate -lm -lpthread
+Requires.private: zlib  bzip2 liblzma
