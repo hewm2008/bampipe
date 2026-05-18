@@ -58,7 +58,7 @@ Phase 3:  Concat        — BGZF 块级拼接 per-chr BAM → 最终输出
 | samtools 3-pipe @24 | 4m49s | — | — | 610% | 6.1 | 33.2GB |
 | **bampipe @16 (-C 默认)** | **2m51s** | 129s | 38s | 763% | 7.6 | 36.3GB |
 | **bampipe @8 (-C 默认)** | **3m57s** | 174s | 60s | 570% | 5.7 | 36.7GB |
-| sambamba markdup @24 (BAM) | 2m27s | — | — | 1182% | 11.8 | 2.0GB |
+| sambamba markdup+sort @24 (BAM) | 4m27s | — | — | 1182% | 11.8 | 4.0GB |
 
 > bampipe 默认启用 BGZF 压缩（-C）。sambamba 仅做 markdup（不做 fixmate），输入为 6 GB BAM。
 
